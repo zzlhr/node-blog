@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="baidu-site-verification" content="CUeYzIa0k1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>黑白的博客</title>
+  <!--<link rel="stylesheet" href="css/b3.css" />-->
+  <!--<link rel="stylesheet" href="css/b3-t.css" />-->
+  <link rel="stylesheet" type="text/css" href="css/amazeui.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/amazeui.flat.min.css"/>
+  <link rel="stylesheet" href="css/myself_blog.css" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+<!-- 导航 -->
+<header class="am-topbar">
+  <h1 class="am-topbar-brand">
+    <a href="#" class="am-text-ir">heibai blog</a>
+  </h1>
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+  <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav">
+     <%- nav%>
+    </ul>
+  </div>
+</header>
+<div class="am-g">
+  <div class="am-u-sm-2"></div>
+  <div class="am-u-sm-7">
+    <h1><%- h1%></h1>
+      <%- article%>
+  </div>
+  <div class="am-u-sm-2">
+    <!-- 关于我 -->
+    <section class="am-panel am-panel-default">
+      <header class="am-panel-hd">
+        <h3 class="am-panel-title">关于我</h3>
+      </header>
+      <div class="am-panel-bd">
+        <%- aboutme%>
+      </div>
+    </section>
+    <!-- 右侧推荐文章 -->
+    <div>
+      <h3>推荐文章</h3>
+      <ul class="am-list">
+       <%- articleRight%>
+      </ul>
+    </div>
+    <div>
+      <h3>友情链接</h3>
+      <ul class="am-list">
+        <%- links%>
+      </ul>
+    </div>
+  </div>
+  <div class="am-u-sm-1"></div>
+</div>
+<div style="width: 100%; text-align: center">
+  <small>Copyright © 2017-2018 heibai小站 All Rights Reserved. www.myheibai.cn 版权所有</small><br />
+  <a href="http://www.miitbeian.gov.cn/" class="a" target="_blank" rel="external nofollow"><small>豫ICP备17005770号-1</small></a>
+</div>
+</body>
+<script type="text/javascript" src="js/lib/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/amazeui.js"></script>
+<script type="text/javascript" src="js/amazeui.widgets.helper.js"></script>
+<script>
+  function sendMessage() {
+      var name = document.getElementById('name').value;
+      var text = document.getElementById('text').value;
+      console.log(name);
+      $.ajax({
+          url:'/sendMessage.html',
+          type:'post',
+          data:{
+              name : name,
+              message : text
+          },
+          success:function (result) {
+              alert(result.msg);
+          },error:function (err) {
+              console.log(err);
+          }
+      })
+  }
+  var page = 1;
+  function seeOther() {
+      page++;
+      $.ajax({
+          url:'/message?page='+page,
+          type:'get',
+          success:function (result) {
+              var msg = "";
+              for(var i = 0;i<result.length;i++){
+                  var messagemodel = '<article class="am-comment"><a href="">' +
+                      '<img class="am-comment-avatar" alt="" src="images/54eebef12dad7.jpg"/>' +
+                      '</a>' +
+                      '<div class="am-comment-main">' +
+                      '<header class="am-comment-hd">' +
+                      '<div class="am-comment-meta"><a href="#link-to-user" class="am-comment-author">'+result[i].name+'</a>'+
+                      '留言于 <time datetime="">'+result[i].time+'</time>' +
+                      '</div> ' +
+                      '</header>' +
+                      '<div class="am-comment-bd">'+result[i].message+'</div>'+
+                      '</div> </article><br />';
+                  msg += messagemodel;
+              }
+              document.getElementById('messagelist').innerHTML += msg;
+          },error:function (err) {
+              console.log(err);
+          }
+      })
+  }
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?f027f908ec737580410f60e37b4e063a";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" type="text/css" href="css/amazeui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/amazeui.flat.min.css"/>-->
+		<!--<link rel="stylesheet" href="css/myself_blog.css" />-->
+		<script src="js/lib/jquery-1.10.2.min.js"></script> 
+	</head>
+	<body>
+		<div class="container-fluid" id="LG">
+	<div class="row-fluid">
+		<div class="span12">
+			<h3>
+				黑白的后台管理系统
+			</h3>
+			<a class="pull-right" href="exit.html">退出</a>
+		</div>
+	</div>
+	<legend></legend>
+	<div class="row-fluid">
+		<div class="span2">
+			<ul class="nav nav-list">
+				<li class="nav-header">
+					基本管理
+				</li>
+				<li class="active" name="index.html">
+					<a href="#" rel="nofollow">首页</a>
+				</li>
+				<li id="article" name="bg_article.html?pageNumber=1&pageSize=10">
+					<a href="#" rel="nofollow">文章管理</a>
+				</li>
+				<li name="bg_message.html">
+					<a href="#" rel="nofollow">留言管理</a>
+				</li>
+				<li class="nav-header">
+					站点管理
+				</li>
+				<li name="bg_sql.html">
+					<a href="#" rel="nofollow">数据库管理</a>
+				</li>
+				<li name="bg_setting.html">
+					<a href="#" rel="nofollow">设置</a>
+				</li>
+				<li class="divider">
+				</li>
+				<li name="bg_help.html">
+					<a href="#" rel="nofollow">帮助</a>
+				</li>
+			</ul>
+		</div>
+		<div class="span8">
+			<iframe id="iframe" frameborder="0" style="width: 100%; height: 100%;" scrolling="auto" src='index.html'> 
+				
+			</iframe>
+		</div>
+		<script>
+			$('#iframe').height($(window).height() - $('#iframe').offset().top - 25);
+		</script>
+		<div class="span2">
+			<div class="accordion" id="accordion-982687">
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						 <a rel="nofollow" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-982687" href="#accordion-element-903574">选项卡 #1</a>
+					</div>
+					<div id="accordion-element-903574" class="accordion-body collapse">
+						<div class="accordion-inner">
+							功能块...
+						</div>
+					</div>
+				</div>
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						 <a rel="nofollow" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-982687" href="#accordion-element-660298">选项卡 #2</a>
+					</div>
+					<div id="accordion-element-660298" class="accordion-body in">
+						<div class="accordion-inner">
+							功能块...
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<div style="width: 100%; text-align: center">
+		<small>Copyright © 2017-2018 heibai小站 All Rights Reserved. www.myheibai.cn 版权所有</small><br />
+		<a href="http://www.miitbeian.gov.cn/" class="a" target="_blank" rel="external nofollow"><small>豫ICP备17005770号-1</small></a>
+	</div>
+	</body>
+	<script type="text/javascript" src="js/bootstrap.min.js" ></script>
+	<script type="text/javascript" src="js/jquery-ui.js" ></script>
+	<script type="text/javascript">
+		$('.nav-list').children('li').bind('click',this,function(){
+			$("[class='active']").removeClass("active");
+			$(this).addClass('active');
+			var u = $(this).attr('name');
+			$('#iframe').attr('src',u);
+		})
+	</script>
+</html>

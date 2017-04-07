@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>留言板</title>
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/amazeui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/amazeui.flat.min.css"/>
+		<link rel="stylesheet" href="css/myself_blog.css" />
+	</head>
+	<body>
+		<!--导航-->
+		<header class="am-topbar" style="padding-bottom: 0px;">
+		  <h1 class="am-topbar-brand">
+		    <a href="#">blog</a>
+		  </h1>
+		  <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+			  <ul class="am-nav am-nav-pills am-topbar-nav">
+			  	<li><a href="index.html">首页</a></li>
+			  	<li><a href="articles.ejs">文章</a></li>
+			  	<li><a href="share.ejs">分享</a></li>
+			  	<li class="am-active"><a href="msgboard.ejs">留言板</a></li>
+			  	<li><a href="about.ejs">关于</a></li>
+			  </ul>
+		  </div>
+		</header>
+		<div class="index_f">
+			<div class="index_main am-fl">
+				<h1>留言板</h1>
+				<p>各位朋友，欢迎来到我的博客，这里是留言板，有任何想和我说的都可以在这里留下你的痕迹。</p>
+				<hr />
+				<!--留言板-->
+				<article class="am-comment"> <!-- 评论容器 -->
+				  <a href="">
+				    <img class="am-comment-avatar" alt="" src="images/54eebef12dad7.jpg"/> <!-- 评论者头像 -->
+				  </a>
+				  <div class="am-comment-main"> <!-- 评论内容容器 -->
+				    <header class="am-comment-hd">
+				      <div class="am-comment-meta"> <!-- 评论元数据 -->
+				        <a href="#link-to-user" class="am-comment-author">#{user}</a> <!-- 评论者 -->
+				        留言于 <time datetime="">#{time}</time>
+				      </div>
+				    </header>
+				    <div class="am-comment-bd">#{text}</div> <!-- 评论内容 -->
+				  </div>
+				</article>
+			</div>
+			<div class="index_about am-fr">
+				<section class="am-panel am-panel-default">
+				  <header class="am-panel-hd">
+				    关于
+				  </header>
+				  <div class="am-panel-bd">
+				  <p> &nbsp;&nbsp;&nbsp;&nbsp;一个年轻的程序员，怀着无限热情，挑战着一个个的难题，不断进步，不断成长，在代码寻找快乐，用代码书写人生。</p> 
+				  <button type="button" class="am-btn am-btn-primary">查看更多</button>
+				  </div>
+				</section>
+			</div>
+		</div>
+		
+	</body>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/amazeui.ie8polyfill.min.js" ></script>
+	<script type="text/javascript" src="js/amazeui.min.js" ></script>
+	<script type="text/javascript" src="js/amazeui.widgets.helper.min.js" ></script>
+</html>

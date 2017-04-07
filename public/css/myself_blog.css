@@ -1,0 +1,56 @@
+.myindex_div{
+	background-color: #9ACFEA;
+	height: 500px;
+	width: 100%;
+}
+.index_hearder{
+	height: 200px;
+}
+.index_articles{
+	width: 67%;
+}
+.index_article{
+	padding-bottom: 20px;
+	list-style-type:none;
+}
+.index_about{
+	width: 28%;
+}
+.index_img{
+	width: 220px;
+	height:160px;
+}
+.index_f{
+	margin-left: 15%;
+	margin-right: 15%;
+}
+.index_main{
+	width: 67%;
+}
+.about_main{
+	margin-left: 15%;
+	margin-right: 15%;
+}
+.article_a{
+	color: #000000;
+}
+a:hover{color:#9ACFEA}
+.article_text{
+	margin-left: 15%;
+	margin-right: 15%;
+}
+.col-center-block {  
+   	margin-left: 42%; 
+   	margin-top: 16%;
+}
+/*
+ * 剧中div
+ */
+.bg_login_center{
+	margin:15% auto; 
+	width:345px; 
+	height:300px; 
+}
+div{
+	border: #ffffff solid thin;
+}
